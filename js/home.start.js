@@ -31,18 +31,6 @@ document.getElementById('support').addEventListener('click', ()=>{
     
 // });
 document.getElementsByTagName('span')[1].innerHTML = ver
-for (i=0; i < document.getElementsByTagName('button').length; i++){
-    document.getElementsByTagName('button')[i].removeAttribute('id');
-}
-for (i=0; i < document.getElementsByTagName('p').length; i++){
-    document.getElementsByTagName('p')[i].removeAttribute('id');
-}
-for (i=0; i < document.getElementsByTagName('input').length; i++){
-    document.getElementsByTagName('input')[i].removeAttribute('id');
-}
-for (i=0; i < document.getElementsByTagName('span').length; i++){
-    document.getElementsByTagName('span')[i].removeAttribute('id');
-}
 document.getElementById('buy_new').addEventListener('click', ()=>{
     shell.openExternal("https://github.com/ghalbeyou/batch-maker")
 })
