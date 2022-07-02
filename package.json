@@ -1,0 +1,16 @@
+{
+  "name": "batchmaker",
+  "version": "0.0.1",
+  "description": "A batch maker app, to create batch",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node index.js"
+  },
+  "keywords": [
+    "simple",
+    "easy",
+    "free"
+  ],
+  "author": "ghalbeyou"
+}
