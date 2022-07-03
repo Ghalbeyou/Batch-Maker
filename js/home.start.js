@@ -2,6 +2,8 @@ var ver = '1.0.0 ALPHA';
 var name = document.getElementById('p_name').value;
 var ele = document.getElementById('support')
 const {shell} = require('electron');
+const { generateID } = require('../js/project.random');
+// const { your_id } = require('../js/app.start');
 document.getElementsByTagName('form')[0].addEventListener('submit', (e)=>{
     e.preventDefault()
     let lang = 'batchfile'
@@ -30,7 +32,9 @@ document.getElementById('support').addEventListener('click', ()=>{
 //     document.getElementById('p_di').innerHTML = `${path}`
     
 // });
-document.getElementsByTagName('span')[1].innerHTML = ver
+document.getElementsByTagName('span')[2].innerHTML = ver
 document.getElementById('buy_new').addEventListener('click', ()=>{
     shell.openExternal("https://github.com/ghalbeyou/batch-maker")
 })
+
+document.getElementById('last').innerHTML = generateID();

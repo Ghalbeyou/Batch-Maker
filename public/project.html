@@ -4,15 +4,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="./js/bootstrap.min.js" defer></script>
+    <!-- <script src="../js/app.jquery.js"></script> -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="../js/app.sweetalert.js" defer></script>
     <title id="title">Project </title>
 </head>
 <body class="bg-light bg-gradient container">
-    <h1 id="title2">Project</h1>
+    <h1 id="title_2">Project</h1>
     <button class="btn btn-success" id="package">Package     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
         <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
       </svg></button>
-      <button class="btn btn-primary" id="test">Test     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
+      <button class="btn btn-primary" id="test">Remove     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
         <path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
       </svg></button>
@@ -57,23 +59,45 @@
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <div class="form-group"><input id="s_msg" class="form-control" placeholder="Hi!"/><button class="btn btn-primary" id="smawtf_msg">Show Message</button></div>
-                            <div class="form-group"><input id="s_ask" class="form-control" placeholder="What is your name?"/><button class="btn btn-primary" id="smawtf_ask">Add</button></div>
-                            <div class="form-group"><input id="s_f_c" class="form-control" placeholder="Content"/><input id="s_f_n" class="form-control" placeholder="test.txt"/><button class="btn btn-primary" id="smawtf_save">Save to file</button></div>
+                            <div class="form-group"><input id="s_msg" class="form-control" placeholder="Message"/><button class="btn btn-primary" id="smawtf_msg">Show Message</button></div>
+                            <div class="form-group"><input id="s_ask" class="form-control" placeholder="Question?"/><button class="btn btn-primary" id="smawtf_ask">Add</button></div>
+                            <div class="form-group"><input id="s_f_c" class="form-control" placeholder="Content"/><input id="s_f_n" class="form-control" placeholder="File name (No Space)"/><button class="btn btn-primary" id="smawtf_save">Save to file</button></div>
                         </div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Custom (start, set)
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                          If, Create Loop, Load Loop
                         </button>
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <div class="form-group"><input id="c_f" class="form-control" placeholder="test.txt"/><button class="btn btn-primary" id="custom_add">Add</button></div>
-                            <div class="form-group"><input id="c_f_1" class="form-control" placeholder="value"/><input id="c_f_2" class="form-control" placeholder="test"/><button class="btn btn-primary" id="custom_set">Add</button></div>
+                            <div class="form-group">
+                              <input id="loop_name" class="form-control" placeholder="Loop Name(Without space)"/>
+                              <button id="loop_create" class="btn btn-primary">Add new loop</button>
+                            </div>
+                            <div class="form-group">
+                              <input id="loop_name_1" class="form-control" placeholder="Loop Name(Without space)"/>
+                              <button id="goto_loop" class="btn btn-primary">Add command to go to loop</button>
+                            </div>
+                            <button disabled id="create_if" class="btn btn-primary">Create If</button>
                         </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Custom (start, set, wait)
+                        </button>
+                      </h2>
+                      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="form-group"><input id="c_f" class="form-control" placeholder="File name"/><button class="btn btn-primary" id="custom_add">Add Command Start</button></div>
+                            <div class="form-group"><input id="c_f_1" class="form-control" placeholder="content of set"/><input id="c_f_2" class="form-control" placeholder="name of set"/><button class="btn btn-primary" id="custom_set">Add Command Set</button></div>
+                            <div class="form-group"><input id="c_f_5" type="number" min="2" class="form-control" placeholder="Wait in seconds"/><button class="btn btn-primary" id="create_wait">Add Command For Wait</button></div>
+                          
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -85,9 +109,8 @@
           </div>
         </div>
       </div><iframe id="my_iframe" style="display:none;"></iframe>
-
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="../js/project.start.js"></script>
   <script src="../js/app.start.js"></script>
-
 </body>
 </html>
