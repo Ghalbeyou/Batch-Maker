@@ -1,4 +1,4 @@
-const { generateRandom, generateID } = require("../js/project.random");
+const { generateID, generateVar } = require("../js/project.random");
 const fs = require('fs')
 // const {shell} = require('electron');
 // const path = require("path");
@@ -62,7 +62,7 @@ function download(filename, textInput) {
 }
 package.addEventListener('click', ()=>{
     // download the file 
-    const random = generateRandom(5)
+    const random = generateVar(5)
     var a = "@echo off\ntitle Loading\necho THIS APP IS MADE IN BATCH MAKER FROM @GHALBEYOU IN GITHUB!\necho THIS TEXT AND THIS PART OF THE APP IS COPY RIGHT!\nping localhost -n 3 > nul\ncls\n" + code.innerHTML;
     fs.writeFileSync(`./public/${random}.bat`, a)
     download(`${random}.bat`, a)
@@ -100,7 +100,7 @@ document.getElementById('smawtf_msg').addEventListener('click', ()=>{
 
 })
 document.getElementById('smawtf_ask').addEventListener('click', ()=>{
-    let random = generateRandom(5)
+    let random = generateVar(5)
     code.innerHTML = `${code.innerHTML}\nset /p ${random}=${document.getElementById('s_ask').value}`
     clearForm();
 
@@ -146,7 +146,7 @@ document.getElementById('smawtf_deldir').addEventListener('click', ()=>{
     clearForm()
 })
 document.getElementById('read_File').addEventListener('click', ()=>{
-    code.innerHTML = `${code.innerHTML}\nfor /f "tokens=*" %%i in ('type "${document.getElementById('cf_40').value}"') do set ${generateRandom(3)}=%%i`
+    code.innerHTML = `${code.innerHTML}\nfor /f "tokens=*" %%i in ('type "${document.getElementById('cf_40').value}"') do set ${generateVar(3)}=%%i`
     code.innerHTML = `${code.innerHTML}\n@REM after set in the commnad on top, you can use the variable like this: %njasiA%`
     clearForm()
 })
