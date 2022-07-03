@@ -1,4 +1,4 @@
-const { generateRandom } = require("../js/project.random");
+const { generateRandom, generateID } = require("../js/project.random");
 const fs = require('fs')
 // const {shell} = require('electron');
 // const path = require("path");
@@ -30,11 +30,23 @@ save.addEventListener('click', ()=>{
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.value) {
+            if (result.value < 1 || result.value > code.value.split('\n').length){
+                sweetAlert.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Line number is out of range',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+            else{
+                var lines = code.value.split('\n');
+                lines.splice(result.value-1, 1);
+                code.innerHTML = lines.join('\n');
+            }
+
             // find that line in textarea and delete it
-            var text = code.innerHTML;
-            var lines = text.split('\n');
-            lines.splice(result.value-1, 1);
-            code.innerHTML = lines.join('\n');
+            // code.innerHTML = lines.join('\n');
             clearForm();
         }
       })
@@ -123,5 +135,18 @@ document.getElementById('goto_loop').addEventListener('click', ()=>{
 })
 document.getElementById('create_wait').addEventListener('click', ()=>{
     code.innerHTML = `${code.innerHTML}\nping localhost -n ${document.getElementById('c_f_5').value} > nul`
+    clearForm()
+})
+document.getElementById('smawtf_createdir').addEventListener('click', ()=>{
+    code.innerHTML = `${code.innerHTML}\nmd "${document.getElementById('c_f_36').value}"`
+    clearForm()
+})
+document.getElementById('smawtf_deldir').addEventListener('click', ()=>{
+    code.innerHTML = `${code.innerHTML}\rd /s /q "${document.getElementById('c_f_37').value}"`
+    clearForm()
+})
+document.getElementById('read_File').addEventListener('click', ()=>{
+    code.innerHTML = `${code.innerHTML}\nfor /f "tokens=*" %%i in ('type "${document.getElementById('cf_40').value}"') do set ${generateRandom(3)}=%%i`
+    code.innerHTML = `${code.innerHTML}\n@REM after set in the commnad on top, you can use the variable like this: %njasiA%`
     clearForm()
 })

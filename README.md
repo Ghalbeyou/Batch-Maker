@@ -1,22 +1,15 @@
 # Batch Maker
 A app to create batch apps without coding!
 ## Versions
-We got Two versions of the app:
-### Free
-this version is open source and free.
-the free version is available on [GitHub](https://github.com/ghalbeyou/batch-maker).
-Features:
-- Add echo
-- Add pause
-- Add exit
-- Add start
-- Change Color
-- Change title
-- and more!
-### Pro
-this version is not avaible even if you pay. because this version is on working progress.
-Features:
-- everything that you need to build even a 2d game in batch!
+The app is now compelety free and **open source**.
+But, it is still in alpha. So, it is not recommended to use it in production.
+## Features
+* Create batch apps without coding!
+* Create batch apps with multiple commands!
+* Create batch apps with advanced commands!
+* Create batch commands to create multiple fils!
+* Create batch commands to create multiple folders!
+* and a ton more!
 ## How to use
 to use this app, you need electron installed with npm. then, open the folder of the app and type:
 ```
