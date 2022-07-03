@@ -12,5 +12,9 @@
     "easy",
     "free"
   ],
-  "author": "ghalbeyou"
+  "author": "ghalbeyou",
+  "directories": {
+    "doc": "docs"
+  },
+  "license": "ISC"
 }
